@@ -1,0 +1,1 @@
+const myNum = 1;
