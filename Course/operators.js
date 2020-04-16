@@ -54,3 +54,7 @@ console.log("Got the userDetails as: " + userDetails);
 // If you want to print objects and arrays, it's better to use the attach syntax
 console.log("Got the edibles as : ", edibles);
 console.log("Got the userDetails as: ", userDetails);
+// Destructure
+var fName = user.firstName, lName = user.lastName;
+console.log(fName);
+console.log(lName);

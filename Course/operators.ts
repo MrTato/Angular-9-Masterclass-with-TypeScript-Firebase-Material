@@ -54,3 +54,9 @@ console.log(`The user with name: ${user.firstName} has an address of: ${userDeta
  // If you want to print objects and arrays, it's better to use the attach syntax
  console.log(`Got the edibles as : `, edibles);
  console.log(`Got the userDetails as: `, userDetails);
+
+ // Destructure
+
+ let { firstName: fName, lastName: lName} = user;
+console.log(fName);
+console.log(lName);
