@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc -t es5 classes.ts -w",
+    "start": "tsc -t es5 interfaces.ts -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Bayardo Lopez",
