@@ -1,6 +1,7 @@
 import { CoreModule } from './core/core.module';
 import { HeaderComponent } from './core/header/header.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +24,8 @@ import { UsersComponent } from './components/users/users.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent, UserComponent]
