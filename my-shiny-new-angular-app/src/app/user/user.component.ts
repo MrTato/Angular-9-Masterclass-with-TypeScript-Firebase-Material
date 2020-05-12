@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {
   trigger,
   state,
@@ -34,7 +34,8 @@ import {
       transition("open => closed", [animate("1s")]),
       transition("closed => open", [animate("0.5s")])
     ])
-  ]
+  ],
+  encapsulation: ViewEncapsulation.None
 })
 export class UserComponent implements OnInit {
   isOpen = true;
