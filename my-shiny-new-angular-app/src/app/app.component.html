@@ -9,4 +9,11 @@
 
 <!-- <app-string-interpolation></app-string-interpolation> -->
 <!-- <app-property-binding></app-property-binding> -->
-<app-event-binding></app-event-binding>
+<!-- <app-event-binding></app-event-binding> -->
+<h1>@Input</h1>
+<app-hello [name]="title"></app-hello>
+<app-hello name="{{title}}"></app-hello>
+<hr>
+<h1>@Output</h1>
+<p>Current value of the Counter is <span [class]="classToSet">{{ counter }}</span></p>
+<app-counter-actions (counterChange)="onCounterChange($event)"></app-counter-actions>

@@ -16,5 +16,12 @@ import { Component } from '@angular/core';
   // providers: [ DataService ]
 })
 export class AppComponent {
-  title = 'my-shiny-new-angular-app';
+  title = "Angular";
+  counter = 0;
+  classToSet = 'positive';
+
+  onCounterChange(buttonType: string) {
+    buttonType == 'INC' ? this.counter++ : this.counter--;
+    this.classToSet = this.counter > 0 ? 'positive' : 'negative';
+  }
 }
