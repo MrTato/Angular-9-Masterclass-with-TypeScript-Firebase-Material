@@ -12,6 +12,7 @@ import { SafePipe } from './pipes/safe/safe.pipe';
 import { ChatComponent } from './components/chat/chat.component';
 import { UsersComponent } from './components/users/users.component';
 import { StringInterpolationComponent } from './components/bindings/string-interpolation/string-interpolation.component';
+import { PropertyBindingComponent } from './components/bindings/property-binding/property-binding.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { StringInterpolationComponent } from './components/bindings/string-inter
     SafePipe,
     ChatComponent,
     UsersComponent,
-    StringInterpolationComponent
+    StringInterpolationComponent,
+    PropertyBindingComponent
   ],
   imports: [
     BrowserModule,
