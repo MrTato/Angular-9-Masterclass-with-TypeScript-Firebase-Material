@@ -18,6 +18,7 @@ import { EventBindingComponent } from './components/bindings/event-binding/event
 import { HelloComponent } from './components/hello/hello.component';
 import { CounterActionsComponent } from './components/counter-actions/counter-actions.component';
 import { AttributeBindingComponent } from './components/bindings/attribute-binding/attribute-binding.component';
+import { ClassBindingsComponent } from './components/bindings/class-bindings/class-bindings.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AttributeBindingComponent } from './components/bindings/attribute-bindi
     EventBindingComponent,
     HelloComponent,
     CounterActionsComponent,
-    AttributeBindingComponent
+    AttributeBindingComponent,
+    ClassBindingsComponent
   ],
   imports: [
     BrowserModule,
