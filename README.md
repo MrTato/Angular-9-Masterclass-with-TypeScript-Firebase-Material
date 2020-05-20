@@ -11,3 +11,11 @@ The second directory is Course, and it contains a node project that uses typescr
 In order to run it, you can use:
 ```npm start
 Keep in mind that this will look at the actions found in the package.json file.
+
+The third directory is myApp, and it contains an Angular project that was done following the instructions found in https://youtu.be/G0bBLvWXBvc
+You can run it using
+<code>ng serve</code>
+
+The fourth directory is Notes, and it contains the solution to the Assignment 1 for the Angular course being followed in this section
+You can run it using
+<code>ng serve</code>
