@@ -5,6 +5,9 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+/**
+ * @author Bayardo Lopez
+ */
 export class AppComponent {
   title = 'Notes';
 }
