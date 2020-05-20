@@ -1,0 +1,9 @@
+<div class="note-container">
+  <h2>Type in a Note and Press Enter to Add it</h2>
+  <input
+    class="note-bar"
+    type="text"
+    placeholder="Note text goes here"
+    (keyup)="onKeyPress($event)"
+    [(ngModel)]="noteText">
+</div>

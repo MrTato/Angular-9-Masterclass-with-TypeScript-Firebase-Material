@@ -1,0 +1,10 @@
+<h2>Note List</h2>
+<p class="note-list-message" *ngIf="isNotesEmpty">Add some notes to see them here!</p>
+<main >
+  <app-single-note
+    *ngFor="let note of this.noteService.notes; let i = index;"
+    [noteText]="note.noteText"
+    [index]="i"
+    (onClickDelete)="deleteNote = $event">
+  </app-single-note>
+</main>
