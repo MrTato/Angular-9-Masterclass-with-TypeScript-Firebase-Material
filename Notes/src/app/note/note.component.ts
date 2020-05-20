@@ -11,7 +11,6 @@ import { Component, OnInit, Output } from '@angular/core';
 
 export class NoteComponent implements OnInit {
 
-  // noteList: NoteListComponent = new NoteListComponent();
   noteText: string;
 
   constructor(public noteService: NoteService) { }
@@ -19,19 +18,13 @@ export class NoteComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // set addNote(note: SingleNoteComponent) {
-  //   this.noteService.notes.push(note);
-  // }
-
   onKeyPress(keyUpEvent) {
     console.log(keyUpEvent);
     if(keyUpEvent.code == 'Enter') {
       let singleNote: SingleNoteComponent = new SingleNoteComponent();
       singleNote.noteText = this.noteText;
       this.noteService.addNote = singleNote;
-      // console.log(this.noteService.addNote);
-      // console.log(singleNote.noteText);
-      // console.log(this.noteService.notes);
+      this.noteText = "";
     }
   }
 
