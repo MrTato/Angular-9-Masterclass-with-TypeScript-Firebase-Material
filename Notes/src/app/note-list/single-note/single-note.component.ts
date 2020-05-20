@@ -1,5 +1,5 @@
 import { NoteService } from '../../services/note.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-single-note',
@@ -9,12 +9,19 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SingleNoteComponent implements OnInit {
 
   @Input() noteText: string;
+  @Input() index: number;
+  @Output() onClickDelete = new EventEmitter();
 
   constructor() {
   }
 
   ngOnInit(): void {
     console.log(this.noteText);
+  }
+
+  onClick() {
+    console.log(this.index);
+    this.onClickDelete.emit(this.index);
   }
 
 }

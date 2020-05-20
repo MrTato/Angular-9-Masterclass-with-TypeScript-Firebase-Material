@@ -1,6 +1,6 @@
 import { NoteService } from './../services/note.service';
 import { SingleNoteComponent } from './single-note/single-note.component';
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-note-list',
@@ -15,8 +15,12 @@ export class NoteListComponent implements OnInit {
   }
 
   get isNotesEmpty() {
-    console.log(this.noteService.notes.length);
     return this.noteService.notes.length == 0;
+  }
+
+  set deleteNote(index: number) {
+    console.log(index);
+    this.noteService.notes.splice(index, 1);
   }
 
 }
