@@ -36,8 +36,7 @@ import { PlaceholderComponent } from './components/placeholder/placeholder.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    AppRoutingModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
