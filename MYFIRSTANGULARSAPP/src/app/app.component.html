@@ -1,1 +1,9 @@
-<app-message-list></app-message-list>
+<app-message-list>
+  <!-- This content can be viewed thanks to the <ng-content></ng-content> tag in the message-list.component.html -->
+  <h3>This is the projected content!</h3>
+  <app-message [message]="title"></app-message>
+  <app-message #tempMessage [message]="title"></app-message>
+  <app-message [message]="title"></app-message>
+  <app-message [message]="title"></app-message>
+</app-message-list>
+
