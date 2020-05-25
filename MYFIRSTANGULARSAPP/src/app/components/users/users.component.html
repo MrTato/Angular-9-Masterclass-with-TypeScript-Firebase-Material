@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="col-md-4">
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let user of users">
+        <a routerLink="/{{user.id}}">{{ user.name }}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-8">
+    <app-user-details></app-user-details>
+  </div>
+</div>
