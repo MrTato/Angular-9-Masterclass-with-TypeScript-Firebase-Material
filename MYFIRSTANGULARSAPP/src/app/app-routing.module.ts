@@ -12,7 +12,8 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'users', component: UsersComponent, children: [
+  // With the pathMatch as prefix (default pathMatch), Angular will segment the URL into different paths
+  { path: 'users', component: UsersComponent, pathMatch: 'prefix', children: [
     { path: ':userId', component: UserDetailsComponent },
     { path: '', component: PlaceholderComponent }
   ] },
