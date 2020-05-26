@@ -15,6 +15,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { UserComponent } from './components/user/user.component';
+import { PlaceholderComponent } from './components/placeholder/placeholder.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { UserComponent } from './components/user/user.component';
     HeaderComponent,
     UsersComponent,
     UserDetailsComponent,
-    UserComponent
+    UserComponent,
+    PlaceholderComponent
   ],
   imports: [
     BrowserModule,
