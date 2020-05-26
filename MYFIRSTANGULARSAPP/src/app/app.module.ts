@@ -14,6 +14,7 @@ import { BlogComponent } from './components/blog/blog.component';
 import { HeaderComponent } from './components/header/header.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
     BlogComponent,
     HeaderComponent,
     UsersComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
