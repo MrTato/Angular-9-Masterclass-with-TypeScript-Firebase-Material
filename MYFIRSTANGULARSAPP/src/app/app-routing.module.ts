@@ -1,3 +1,4 @@
+import { MessageListComponent } from './components/message-list/message-list.component';
 import { AuthGuard } from './guards/auth/auth.guard';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { UsersComponent } from './components/users/users.component';
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
       // { path: '', component: PlaceholderComponent }
     ]
   },
+  { path: 'messages', component: MessageListComponent },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
 
