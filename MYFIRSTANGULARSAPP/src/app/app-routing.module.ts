@@ -1,3 +1,4 @@
+import { ConfirmationGuard } from './guards/confirmation/confirmation.guard';
 import { MessageListComponent } from './components/message-list/message-list.component';
 import { AuthGuard } from './guards/auth/auth.guard';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
@@ -25,12 +26,12 @@ const appRoutes: Routes = [
       // { path: '', component: PlaceholderComponent }
     ]
   },
-  { path: 'messages', component: MessageListComponent },
+  { path: 'messages', component: MessageListComponent, canDeactivate: [ ConfirmationGuard ] },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
 
 @NgModule({
-  providers: [ AuthGuard ],
+  providers: [ AuthGuard, ConfirmationGuard ],
   imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule]
 })
