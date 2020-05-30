@@ -1,3 +1,5 @@
+import { UsersResolveGuard } from './guards/UsersResolve/users-resolve.guard';
+import { UserService } from './services/user/user.service';
 import { ConfirmationGuard } from './guards/confirmation/confirmation.guard';
 import { MessageListComponent } from './components/message-list/message-list.component';
 import { AuthGuard } from './guards/auth/auth.guard';
@@ -21,6 +23,9 @@ const appRoutes: Routes = [
     component: UsersComponent,
     pathMatch: 'prefix',
     canActivateChild: [ AuthGuard ],
+    resolve: {
+      users: UsersResolveGuard
+    },
     children: [
       { path: ':userId', component: UserDetailsComponent },
       // { path: '', component: PlaceholderComponent }
@@ -31,7 +36,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  providers: [ AuthGuard, ConfirmationGuard ],
+  providers: [ AuthGuard, ConfirmationGuard, UserService, UsersResolveGuard ],
   imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule]
 })
