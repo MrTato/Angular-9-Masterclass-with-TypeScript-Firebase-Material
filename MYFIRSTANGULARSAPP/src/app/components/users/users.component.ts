@@ -12,13 +12,15 @@ export class UsersComponent implements OnInit {
 
   users: Array<IUser>;
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute, private userService: UserService) {
 
   }
 
   ngOnInit() {
-    // let i = 1;
-    this.activatedRoute.data.forEach(data => this.users = data.users);
+    // this.activatedRoute.data.forEach(data => this.users = data.users);
+    this.userService.getUsersViaREST().subscribe(
+      users => this.users = users
+    );
   }
 
 }

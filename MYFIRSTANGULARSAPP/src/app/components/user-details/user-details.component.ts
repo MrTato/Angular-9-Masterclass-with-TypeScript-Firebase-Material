@@ -19,12 +19,15 @@ export class UserDetailsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.users = this.userService.getUsers();
     this.activatedRoute.data.forEach(data => this.users = data.users);
 
     this.activatedRoute.params.subscribe( params => {
-      this.user = this.userService.getUserById(+params.id);
-      console.log('UserDetailsComponent NgOnInit Activation');
+      this.userService.getUserByIdViaREST(+params.id)
+      .subscribe(
+        user => this.user = user,
+        err => console.log('Got an error while fetching the user details: ', err),
+        () => alert('Fetch of User Details Completed!')
+      );
     });
 
     this.activatedRoute.queryParams.subscribe( qs => console.log('Got the QS as: ', qs));
