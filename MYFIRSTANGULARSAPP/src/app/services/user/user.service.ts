@@ -6,7 +6,8 @@ import { IUser } from 'src/app/interfaces/user';
 })
 export class UserService {
 
-  private users: IUser[] = [
+  // tslint:disable-next-line: variable-name
+  private _users: IUser[] = [
     {
       "id": 1,
       "name": "Leanne Graham",
@@ -62,6 +63,10 @@ export class UserService {
   constructor() { }
 
   getUsers(): IUser[] {
-    return this.users;
+    return this._users;
+  }
+
+  getUserById(id: number): IUser {
+    return this._users.filter(user => user.id === id)[0];
   }
 }

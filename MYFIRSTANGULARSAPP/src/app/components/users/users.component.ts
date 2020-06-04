@@ -17,7 +17,7 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit() {
-    let i = 1;
+    // let i = 1;
     this.activatedRoute.data.forEach(data => this.users = data.users);
   }
 

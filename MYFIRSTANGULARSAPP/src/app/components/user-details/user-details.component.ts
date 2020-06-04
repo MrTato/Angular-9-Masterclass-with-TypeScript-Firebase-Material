@@ -19,12 +19,12 @@ export class UserDetailsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.users = this.userService.getUsers();
+    // this.users = this.userService.getUsers();
+    this.activatedRoute.data.forEach(data => this.users = data.users);
 
     this.activatedRoute.params.subscribe( params => {
-      this.user = this.users.filter( user => {
-        return user.id === +params.userId
-      })[0];
+      this.user = this.userService.getUserById(+params.id);
+      console.log('UserDetailsComponent NgOnInit Activation');
     });
 
     this.activatedRoute.queryParams.subscribe( qs => console.log('Got the QS as: ', qs));

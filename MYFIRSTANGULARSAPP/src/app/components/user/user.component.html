@@ -1,1 +1,3 @@
-<a routerLink="{{user.id}}">{{ user.name }}</a>  | <a routerLink="../">Home</a>
+<div *ngIf="user">
+  <a routerLink="{{user.id}}">{{ user.name }}</a>
+</div>

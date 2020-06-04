@@ -22,13 +22,13 @@ const appRoutes: Routes = [
     path: 'users',
     component: UsersComponent,
     pathMatch: 'prefix',
-    canActivateChild: [ AuthGuard ],
+    // canActivateChild: [ AuthGuard ],
     resolve: {
       users: UsersResolveGuard
     },
     children: [
-      { path: ':userId', component: UserDetailsComponent },
-      // { path: '', component: PlaceholderComponent }
+      { path: ':id', component: UserDetailsComponent, resolve: { users: UsersResolveGuard } },
+      { path: '', component: PlaceholderComponent }
     ]
   },
   { path: 'messages', component: MessageListComponent, canDeactivate: [ ConfirmationGuard ] },
