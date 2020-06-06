@@ -26,7 +26,7 @@ let user = {
     firstName: 'Sidd',
     lastName: 'Ajmera',
     username: 'SiddAjmera',
-    getUserName: (): string => username
+    getUserName: (): string => this.username
 }
 
 // Enum
