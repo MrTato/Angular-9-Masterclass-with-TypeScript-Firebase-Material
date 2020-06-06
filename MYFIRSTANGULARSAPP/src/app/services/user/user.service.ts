@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { IUser } from 'src/app/interfaces/user';
 import { Observable } from 'rxjs';
 
+import { map, retry, catchError } from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -71,16 +73,39 @@ export class UserService {
 
   // The HttpHeaders are to send authorization tokens, or any other HttpHeaders needed
   getUsersViaREST(): Observable<IUser[]> {
-    let headers = new HttpHeaders().set(`Authorization`, `Bearer your-access-token-here`);
-    return this.http.get<IUser[]>(this._rootUrl, { headers });
+    let headers = new HttpHeaders().set(
+      `Authorization`,
+      `Bearer your-access-token-here`
+    );
+    return this.http
+      .get<IUser[]>(this._rootUrl, { headers })
+      .pipe(
+        map((users) => {
+          return users.map((user) => {
+            return {
+              id: user.id,
+              name: user.name,
+              email: user.email,
+            };
+          });
+        })
+      );
   }
 
   getUserById(id: number): IUser {
     return this._users.filter((user) => user.id === id)[0];
   }
 
-  getUserByIdViaREST(id: number): Observable<IUser> {
-    return this.http.get<IUser>(`${this._rootUrl}/${id}`);
+  getUserByIdViaREST(id: number): Observable<IUser> | any {
+    return this.http
+      .get<IUser>(`${this._rootUrl}/${id}`)
+      .pipe(retry(3))
+      .pipe(
+        catchError((err) => {
+          console.log('Got an error as: ', err);
+          return err;
+        })
+      );
   }
 
   createUser(user: IUser): Observable<IUser> {
