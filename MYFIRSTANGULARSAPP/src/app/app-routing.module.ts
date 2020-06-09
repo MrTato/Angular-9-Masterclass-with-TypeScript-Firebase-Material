@@ -1,3 +1,4 @@
+import { ParentComponent } from './components/parent/parent.component';
 import { UsersResolveGuard } from './guards/UsersResolve/users-resolve.guard';
 import { UserService } from './services/user/user.service';
 import { ConfirmationGuard } from './guards/confirmation/confirmation.guard';
@@ -31,6 +32,7 @@ const appRoutes: Routes = [
       { path: '', component: PlaceholderComponent }
     ]
   },
+  { path: 'parent', component: ParentComponent },
   { path: 'messages', component: MessageListComponent, canDeactivate: [ ConfirmationGuard ] },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
