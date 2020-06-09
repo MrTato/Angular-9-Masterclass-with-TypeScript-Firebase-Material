@@ -1,0 +1,20 @@
+<button class="btn btn-primary" (click)="showList = !showList"> Toggle List Visibility</button>
+<div *ngIf="showList">
+  <ul class="list-group">
+    <!-- Only one directive can be used per tag -->
+    <li class="list-group-item" *ngFor="let message of messages; let i = index;">
+      Index: {{ i }}, Message: {{ message }}
+    </li>
+  </ul>
+</div>
+<hr>
+<h4>NgSwitch</h4>
+<input type="text" class="form-control" [(ngModel)]="alertType"><br>
+
+<div [ngSwitch]="alertType">
+  <div class="alert alert-success" role="alert" *ngSwitchCase="'success'">Well done! You successfully read this important alert message.</div>
+  <div class="alert alert-info" role="alert" *ngSwitchCase="'info'">Well done! You successfully read this important alert message.</div>
+  <div class="alert alert-warning" role="alert" *ngSwitchCase="'warning'">Well done! You successfully read this important alert message.</div>
+  <div class="alert alert-danger" role="alert" *ngSwitchCase="'danger'">Well done! You successfully read this important alert message.</div>
+  <div class="alert" role="alert" *ngSwitchDefault>This is the default case.</div>
+</div>

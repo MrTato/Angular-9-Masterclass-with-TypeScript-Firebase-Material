@@ -1,9 +1,9 @@
 import { UserService } from './services/user/user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +21,7 @@ import { UserComponent } from './components/user/user.component';
 import { PlaceholderComponent } from './components/placeholder/placeholder.component';
 import { OneComponent } from './components/one/one.component';
 import { TwoComponent } from './components/two/two.component';
+import { BuiltInStrDirComponent } from './components/built-in-str-dir/built-in-str-dir.component';
 
 @NgModule({
   declarations: [
@@ -38,15 +39,17 @@ import { TwoComponent } from './components/two/two.component';
     UserComponent,
     PlaceholderComponent,
     OneComponent,
-    TwoComponent
+    TwoComponent,
+    BuiltInStrDirComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
   ],
-  providers: [ UserService ],
-  bootstrap: [AppComponent]
+  providers: [UserService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

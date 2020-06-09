@@ -1,3 +1,4 @@
+import { BuiltInStrDirComponent } from './components/built-in-str-dir/built-in-str-dir.component';
 import { ParentComponent } from './components/parent/parent.component';
 import { UsersResolveGuard } from './guards/UsersResolve/users-resolve.guard';
 import { UserService } from './services/user/user.service';
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
     ]
   },
   { path: 'parent', component: ParentComponent },
+  { path: 'str-dir', component: BuiltInStrDirComponent },
   { path: 'messages', component: MessageListComponent, canDeactivate: [ ConfirmationGuard ] },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
