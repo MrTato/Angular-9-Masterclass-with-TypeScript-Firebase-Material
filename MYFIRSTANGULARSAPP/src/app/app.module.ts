@@ -23,6 +23,8 @@ import { OneComponent } from './components/one/one.component';
 import { TwoComponent } from './components/two/two.component';
 import { BuiltInStrDirComponent } from './components/built-in-str-dir/built-in-str-dir.component';
 import { BuiltInAttrDirComponent } from './components/built-in-attr-dir/built-in-attr-dir.component';
+import { ChangeCaseDirective } from './directives/change-case/change-case.directive';
+import { DirectiveHostComponent } from './components/directive-host/directive-host.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { BuiltInAttrDirComponent } from './components/built-in-attr-dir/built-in
     TwoComponent,
     BuiltInStrDirComponent,
     BuiltInAttrDirComponent,
+    ChangeCaseDirective,
+    DirectiveHostComponent,
   ],
   imports: [
     BrowserModule,
