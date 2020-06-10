@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PlaceholderComponent } from './components/placeholder/placeholder.component';
+import { BuiltInAttrDirComponent } from './components/built-in-attr-dir/built-in-attr-dir.component';
 
 
 const appRoutes: Routes = [
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
   },
   { path: 'parent', component: ParentComponent },
   { path: 'str-dir', component: BuiltInStrDirComponent },
+  { path: 'attr-dir', component: BuiltInAttrDirComponent },
   { path: 'messages', component: MessageListComponent, canDeactivate: [ ConfirmationGuard ] },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
