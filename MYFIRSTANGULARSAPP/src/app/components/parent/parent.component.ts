@@ -1,4 +1,6 @@
+import { UserService } from './../../services/user/user.service';
 import { Component, OnInit } from '@angular/core';
+import { IUser } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'app-parent',
@@ -8,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class ParentComponent implements OnInit {
 
   dateToday: Date;
+  users: IUser[];
+  filterIdType: string = '';
   // user: { name: string } = { name: `Jacob` };
 
   // changeProperty() {
@@ -17,8 +21,18 @@ export class ParentComponent implements OnInit {
   // changeObject() {
   //   this.user = { name: `Tom`};
   // }
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     this.dateToday = new Date();
+    this.users = this.userService.getUsers();
+  }
+
+  addUser() {
+    this.userService.addUser({
+      id: this.users.length + 2,
+      name: 'Jacob Riglin',
+      email: 'jacob@domain.com'
+    })
   }
 }
