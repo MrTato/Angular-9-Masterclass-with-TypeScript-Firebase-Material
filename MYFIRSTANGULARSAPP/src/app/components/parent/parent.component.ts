@@ -5,14 +5,20 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './parent.component.html',
   styleUrls: ['./parent.component.css']
 })
-export class ParentComponent {
-  user: { name: string } = { name: `Jacob` };
+export class ParentComponent implements OnInit {
 
-  changeProperty() {
-    this.user.name = `Sam`;
-  }
+  dateToday: Date;
+  // user: { name: string } = { name: `Jacob` };
 
-  changeObject() {
-    this.user = { name: `Tom`};
+  // changeProperty() {
+  //   this.user.name = `Sam`;
+  // }
+
+  // changeObject() {
+  //   this.user = { name: `Tom`};
+  // }
+
+  ngOnInit(): void {
+    this.dateToday = new Date();
   }
 }

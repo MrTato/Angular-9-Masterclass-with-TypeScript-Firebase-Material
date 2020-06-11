@@ -10,4 +10,4 @@ User Email: {{ user.email }} <br />
 <button class="btn btn-warning" (click)="getUserPosts()">Get Post By User</button>
 
 <h4>User's posts</h4>
-<pre>{{ posts | async | json }}</pre>
+<pre>{{ posts | async | json | titlecase }}</pre>
