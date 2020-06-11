@@ -1,1 +1,16 @@
 <input type="text" value="Siddharth"  [appChangeCase]="'lower'">
+<hr>
+
+<div *appUnless="false">
+  This will show
+</div>
+
+<!-- <div *ngIf="showUnless">
+  This will Show
+</div> -->
+<!-- Structural directives are converted to this format -->
+<!-- <ng-template [ngIf]="showUnless">
+  <div>
+    This will Show
+  </div>
+</ng-template> -->
