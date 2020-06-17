@@ -1,3 +1,4 @@
+import { Laptop } from './../../classes/laptop';
 import { UserService } from './../../services/user/user.service';
 import { Component, OnInit } from '@angular/core';
 import { IUser } from 'src/app/interfaces/user';
@@ -26,6 +27,8 @@ export class ParentComponent implements OnInit {
   ngOnInit(): void {
     this.dateToday = new Date();
     this.users = this.userService.getUsers();
+    let laptop: Laptop = new Laptop();
+    console.log(laptop['stickers']);
   }
 
   addUser() {
