@@ -2,13 +2,21 @@ import { Laptop } from './../../classes/laptop';
 import { UserService } from './../../services/user/user.service';
 import { Component, OnInit } from '@angular/core';
 import { IUser } from 'src/app/interfaces/user';
+import { HookLogger } from 'src/app/decorators/class.decorator';
 
+@HookLogger()
 @Component({
   selector: 'app-parent',
   templateUrl: './parent.component.html',
   styleUrls: ['./parent.component.css']
 })
-export class ParentComponent implements OnInit {
+// @HookLogger({
+//   hooks: [
+//     'ngOnChanges',
+//     'ngOnInit',
+//   ]
+// })
+export class ParentComponent {
 
   dateToday: Date;
   users: IUser[];
@@ -27,8 +35,8 @@ export class ParentComponent implements OnInit {
   ngOnInit(): void {
     this.dateToday = new Date();
     this.users = this.userService.getUsers();
-    let laptop: Laptop = new Laptop();
-    console.log(laptop['stickers']);
+    // let laptop: Laptop = new Laptop();
+    // console.log(laptop['stickers']);
   }
 
   addUser() {
