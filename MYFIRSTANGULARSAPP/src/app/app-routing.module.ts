@@ -15,6 +15,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PlaceholderComponent } from './components/placeholder/placeholder.component';
 import { BuiltInAttrDirComponent } from './components/built-in-attr-dir/built-in-attr-dir.component';
+import { NewUserComponent } from './components/new-user/new-user.component';
 
 
 const appRoutes: Routes = [
@@ -36,6 +37,7 @@ const appRoutes: Routes = [
     ]
   },
   { path: 'parent', component: ParentComponent },
+  { path: 'new-user', component: NewUserComponent },
   { path: 'str-dir', component: BuiltInStrDirComponent },
   { path: 'attr-dir', component: BuiltInAttrDirComponent },
   { path: 'directives', component: DirectiveHostComponent },
