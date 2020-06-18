@@ -3,7 +3,7 @@
   <form #userForm="ngForm" (ngSubmit)="submit(userForm)">
     <div class="form-group">
       <label for="name"></label
-      >Name<input type="text" name="name" class="form-control" ngModel/>
+      >Name<input required type="text" name="name" class="form-control" ngModel/>
     </div>
     <div class="form-group">
       <label for="username"></label
@@ -26,6 +26,6 @@
 
     </pre>
     <hr>
-    <button class="btn btn-primary" type="submit">Submit</button>
+    <button class="btn btn-primary" type="submit" [disabled]="userForm.invalid">Submit</button>
   </form>
 </div>
