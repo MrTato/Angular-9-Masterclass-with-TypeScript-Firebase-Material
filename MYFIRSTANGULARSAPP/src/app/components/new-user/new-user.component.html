@@ -1,25 +1,25 @@
 <div class="container">
   <h1>New User Form</h1>
-  <form>
+  <form (ngSubmit)="submit()">
     <div class="form-group">
       <label for="name"></label
-      >Name<input type="text" name="name" class="form-control" />
+      >Name<input type="text" name="name" class="form-control" ngModel/>
     </div>
     <div class="form-group">
       <label for="username"></label
-      >Username<input type="text" name="username" class="form-control" />
+      >Username<input type="text" name="username" class="form-control" ngModel/>
     </div>
     <div class="form-group">
       <label for="email"></label
-      >Email<input type="text" name="email" class="form-control" />
+      >Email<input type="text" name="email" class="form-control" ngModel/>
     </div>
     <div class="form-group">
       <label for="phone"></label
-      >Phone<input type="text" name="phone" class="form-control" />
+      >Phone<input type="text" name="phone" class="form-control" ngModel/>
     </div>
     <div class="form-group">
       <label for="website"></label
-      >Website<input type="text" name="website" class="form-control" />
+      >Website<input type="text" name="website" class="form-control" ngModel/>
     </div>
     <hr>
     <pre>
