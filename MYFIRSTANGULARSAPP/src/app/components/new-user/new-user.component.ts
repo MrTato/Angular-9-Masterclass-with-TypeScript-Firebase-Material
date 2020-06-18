@@ -12,9 +12,9 @@ export class NewUserComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submit() {
+  submit(userForm) {
     console.log(
-      `form Submitted`
+      `form Submitted `, userForm
     );
   }
 
