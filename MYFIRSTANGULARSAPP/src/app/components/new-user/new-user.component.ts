@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewUserComponent implements OnInit {
 
+  communicationModes: string[];
+  genders: string[];
+
   constructor() { }
 
   ngOnInit(): void {
+    this.genders = [ 'Male', 'Female' ];
+    this.communicationModes = [ 'Phone' , 'Email' ];
   }
 
   submit(userForm) {
