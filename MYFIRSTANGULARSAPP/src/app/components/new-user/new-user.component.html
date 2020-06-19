@@ -3,7 +3,13 @@
   <form #userForm="ngForm" (ngSubmit)="submit(userForm)">
     <div class="form-group">
       <label for="name"></label
-      >Name<input required type="text" name="name" class="form-control" ngModel/>
+      >Name<input #name="ngModel" pattern="John Doe" required minlength="8" maxlength="20" type="text" name="name" class="form-control" ngModel/>
+    </div>
+    <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+      <p *ngIf="name.errors.required">Name is required</p>
+      <p *ngIf="name.errors.minlength">Name must be at least 8 characters long</p>
+      <p *ngIf="name.errors.maxlength">Name can be at max 20 characters long</p>
+      <p *ngIf="name.errors.pattern">Name must only be John Doe</p>
     </div>
     <div class="form-group">
       <label for="username"></label
