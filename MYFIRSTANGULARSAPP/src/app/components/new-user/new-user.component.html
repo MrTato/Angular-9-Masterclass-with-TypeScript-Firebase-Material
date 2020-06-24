@@ -54,21 +54,67 @@
         ngModel
       />
     </div>
+    <div ngModelGroup="address">
+      <div class="form-group">
+        <label for="street">Street</label>
+        <input type="text" name="street" class="form-control" ngModel />
+      </div>
+      <div class="form-group">
+        <label for="suite">Suite</label
+        ><input type="text" name="suite" class="form-control" ngModel />
+      </div>
+      <div class="form-group">
+        <label for="city">City</label
+        ><input type="text" name="city" class="form-control" ngModel />
+      </div>
+      <div class="form-group">
+        <label for="zipcode">Zipcode</label
+        ><input type="text" name="zipcode" class="form-control" ngModel />
+      </div>
+      <div ngModelGroup="geo">
+        <div class="form-group">
+          <label for="lat">Lat</label
+          ><input type="text" name="lat" class="form-control" ngModel />
+        </div>
+        <div class="form-group">
+          <label for="lng">Lng</label
+          ><input type="text" name="lng" class="form-control" ngModel />
+        </div>
+      </div>
+    </div>
+    <div ngModelGroup="company">
+      <div class="form-group">
+        <label for="name">Name</label
+        ><input type="text" name="name" class="form-control" ngModel />
+      </div>
+      <div class="form-group">
+        <label for="catchPhrase">Catch Phrase</label
+        ><input type="text" name="catchPhrase" class="form-control" ngModel />
+      </div>
+      <div class="form-group">
+        <label for="bs">BS</label
+        ><input type="text" name="bs" class="form-control" ngModel />
+      </div>
+    </div>
     <div class="radio">
       <label class="form-control" for="gender" *ngFor="let gender of genders">
-        <input name="gender" [value]="gender" ngModel type="radio"/> {{ gender }} <br />
+        <input name="gender" [value]="gender" ngModel type="radio" />
+        {{ gender }} <br />
       </label>
     </div>
     <div class="form-group">
       <label for="communicationMode">Communication Options</label>
       <select name="communicationMode" class="form-control" ngModel>
         <option value=""></option>
-        <option *ngFor="let comOpt of communicationModes" [value]="comOpt">{{ comOpt }}</option>
+        <option *ngFor="let comOpt of communicationModes" [value]="comOpt">{{
+          comOpt
+        }}</option>
       </select>
     </div>
     <div class="checkbox">
       <label for="agreement">
-        <input name="agreement" ngModel type="checkbox"/> I agree to the Terms and Conditions! <br />
+        <input name="agreement" ngModel type="checkbox" /> I agree to the Terms
+        and Conditions! <br />
       </label>
     </div>
     <hr />
