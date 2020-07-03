@@ -9,12 +9,19 @@ import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 export class NewUserReactiveComponent implements OnInit {
 
   userForm: FormGroup;
+  get name() {
+    return this.userForm.get('name');
+  }
 
   constructor() { }
 
   ngOnInit(): void {
     this.userForm = new FormGroup({
-      name: new FormControl('John Doe'),
+      name: new FormControl('John Doe', [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.pattern('John Doe')
+      ]),
       username: new FormControl('johndoe'),
       email: new FormControl('john.doe@example.com'),
       phone: new FormControl('9876543210'),
