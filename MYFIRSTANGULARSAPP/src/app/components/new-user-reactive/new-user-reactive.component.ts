@@ -41,7 +41,16 @@ export class NewUserReactiveComponent implements OnInit {
         catchPhrase: new FormControl('See Wold Differently'),
         bs: new FormControl('A company that creates beautiful content for travel boards and hotel chains'),
       }),
+      hobbies: new FormArray([]),
     });
+  }
+
+  addHobby() {
+    (<FormArray>this.userForm.get('hobbies')).push(new FormControl(''));
+  }
+
+  deleteHobby(index: number) {
+    (<FormArray>this.userForm.get('hobbies')).removeAt(index);
   }
 
   submit() {
