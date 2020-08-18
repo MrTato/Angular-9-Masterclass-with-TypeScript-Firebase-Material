@@ -1,3 +1,4 @@
+import { CustomValidations } from './../../classes/custom.validations';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 
@@ -9,8 +10,13 @@ import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 export class NewUserReactiveComponent implements OnInit {
 
   userForm: FormGroup;
+
   get name() {
     return this.userForm.get('name');
+  }
+
+  get username() {
+    return this.userForm.get('username');
   }
 
   constructor() { }
@@ -22,7 +28,7 @@ export class NewUserReactiveComponent implements OnInit {
         Validators.minLength(8),
         Validators.pattern('John Doe')
       ]),
-      username: new FormControl('johndoe'),
+      username: new FormControl('johndoe', CustomValidations.unique),
       email: new FormControl('john.doe@example.com'),
       phone: new FormControl('9876543210'),
       website: new FormControl('john.com'),
