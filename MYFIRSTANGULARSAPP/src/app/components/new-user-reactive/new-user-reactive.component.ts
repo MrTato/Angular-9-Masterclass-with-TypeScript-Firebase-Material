@@ -1,4 +1,5 @@
-import { CustomValidations } from './../../classes/custom.validations';
+import { async } from '@angular/core/testing';
+import { CustomValidations } from '../../classes/custom.validations';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 
@@ -28,7 +29,7 @@ export class NewUserReactiveComponent implements OnInit {
         Validators.minLength(8),
         Validators.pattern('John Doe')
       ]),
-      username: new FormControl('johndoe', CustomValidations.unique),
+      username: new FormControl('johndoe', null, CustomValidations.asyncUnique),
       email: new FormControl('john.doe@example.com'),
       phone: new FormControl('9876543210'),
       website: new FormControl('john.com'),

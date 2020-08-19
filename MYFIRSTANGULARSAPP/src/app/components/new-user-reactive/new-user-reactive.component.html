@@ -13,8 +13,9 @@
     <div class="form-group">
       <label for="username">Username</label
       ><input type="text" formControlName="username" class="form-control" />
+      <p *ngIf="username.pending">Checking for Uniqueness from Server Values...</p>
       <div class="alert alert-danger" *ngIf="username.touched && username.invalid">
-        <p *ngIf="username.errors.unique">Username must be unique!</p>
+        <p *ngIf="username.errors.asyncUnique">Username must be unique!</p>
       </div>
     </div>
     <div class="form-group">
