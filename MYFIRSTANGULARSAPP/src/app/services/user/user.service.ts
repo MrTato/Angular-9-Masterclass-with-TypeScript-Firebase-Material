@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IUser } from 'src/app/interfaces/user';
 import { Observable, BehaviorSubject } from 'rxjs';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 import { map, retry, catchError } from 'rxjs/operators';
 
@@ -67,7 +68,14 @@ export class UserService {
     },
   ];
 
-  constructor(private http: HttpClient) {}
+  private userList: AngularFireList<any>;
+
+  constructor(
+    private http: HttpClient,
+    private firebase: AngularFireDatabase
+    ) {
+      this.userList = this.firebase.list('users');
+    }
 
   getProp(): string {
     return this._prop;
