@@ -15,6 +15,7 @@ interface ICompany {
   bs: string;
 }
 export interface IUser {
+  $key?: string;
   id: number;
   name: string;
   username?: string;

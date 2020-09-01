@@ -1,3 +1,4 @@
+import { IUser } from './../../interfaces/user';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IUser } from 'src/app/interfaces/user';
@@ -146,5 +147,22 @@ export class UserService {
   getUserPosts(id: number): Observable<any> {
     let params = new HttpParams().set('userId', id.toString());
     return this.http.get(this._rootPostsUrl, { params });
+  }
+
+  getUsersFromFirebase() {
+    return this.userList;
+  }
+
+  addUserToFirebase(user: IUser) {
+    this.userList.push(user);
+  }
+
+  updateAUserOnFirebase(user: IUser) {
+    let $key = user.$key;
+    this.userList.update($key, user);
+  }
+
+  deleteUserFromFirebase($key: string) {
+    this.userList.remove($key);
   }
 }
