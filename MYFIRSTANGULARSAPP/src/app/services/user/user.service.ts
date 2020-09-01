@@ -158,6 +158,7 @@ export class UserService {
 
   updateAUserOnFirebase(user: IUser) {
     let $key = user.$key;
+    delete user.$key;
     this.userList.update($key, user);
   }
 

@@ -123,8 +123,14 @@
         {{ userForm.value | json }}
       </pre>
       <hr />
-      <button class="btn btn-primary" type="submit" [disabled]="userForm.invalid">
+      <button class="btn btn-primary" type="submit">
         Submit
+      </button>
+      <button class="btn btn-primary" type="button" (click)="updateUser(userForm)">
+        Update User
+      </button>
+      <button class="btn btn-primary" type="button" (click)="deleteUser()">
+        Delete User
       </button>
     </form>
   </div>

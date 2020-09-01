@@ -1,6 +1,7 @@
 import { UserService } from 'src/app/services/user/user.service';
 import { IUser } from 'src/app/interfaces/user';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-new-user',
@@ -34,6 +35,15 @@ export class NewUserComponent implements OnInit {
         this.userList.push(user as IUser);
       });
     });
+  }
+
+  updateUser(userForm: NgForm) {
+    this.userList[1].name = userForm.value.name;
+    this.userService.updateAUserOnFirebase(this.userList[1]);
+  }
+
+  deleteUser() {
+    this.userService.deleteUserFromFirebase(this.userList[1].$key);
   }
 
 }
