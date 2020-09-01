@@ -1,3 +1,5 @@
+import { UserService } from 'src/app/services/user/user.service';
+import { IUser } from 'src/app/interfaces/user';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,8 +11,9 @@ export class NewUserComponent implements OnInit {
 
   communicationModes: string[];
   genders: string[];
+  userList: IUser[];
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.genders = [ 'Male', 'Female' ];
@@ -18,9 +21,19 @@ export class NewUserComponent implements OnInit {
   }
 
   submit(userForm) {
-    console.log(
-      `form Submitted `, userForm
-    );
+    this.userService.addUserToFirebase(userForm.value);
+    console.log("User Form Submitted");
+  }
+
+  getUsers() {
+    this.userService.getUsersFromFirebase().snapshotChanges().forEach(usersSnapShot => {
+      this.userList = [];
+      usersSnapShot.forEach(userSnapshot => {
+        let user = userSnapshot.payload.toJSON();
+        user['$key'] = userSnapshot.key;
+        this.userList.push(user as IUser);
+      });
+    });
   }
 
 }

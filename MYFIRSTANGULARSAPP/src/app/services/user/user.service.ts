@@ -1,7 +1,6 @@
 import { IUser } from './../../interfaces/user';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IUser } from 'src/app/interfaces/user';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 

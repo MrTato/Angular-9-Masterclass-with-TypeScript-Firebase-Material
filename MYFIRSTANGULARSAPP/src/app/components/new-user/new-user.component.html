@@ -1,129 +1,137 @@
 <div class="container">
-  <h1>New User Form</h1>
-  <form #userForm="ngForm" (ngSubmit)="submit(userForm)">
-    <div class="form-group">
-      <label for="name"></label>Name<input
-        #name="ngModel"
-        pattern="John Doe"
-        required
-        minlength="8"
-        maxlength="20"
-        type="text"
-        name="name"
-        class="form-control"
-        ngModel
-      />
-    </div>
-    <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
-      <p *ngIf="name.errors.required">Name is required</p>
-      <p *ngIf="name.errors.minlength">
-        Name must be at least 8 characters long
-      </p>
-      <p *ngIf="name.errors.maxlength">Name can be at max 20 characters long</p>
-      <p *ngIf="name.errors.pattern">Name must only be John Doe</p>
-    </div>
-    <div class="form-group">
-      <label for="username"></label>Username<input
-        type="text"
-        name="username"
-        class="form-control"
-        ngModel
-      />
-    </div>
-    <div class="form-group">
-      <label for="email"></label>Email<input
-        type="text"
-        name="email"
-        class="form-control"
-        ngModel
-      />
-    </div>
-    <div class="form-group">
-      <label for="phone"></label>Phone<input
-        type="text"
-        name="phone"
-        class="form-control"
-        ngModel
-      />
-    </div>
-    <div class="form-group">
-      <label for="website"></label>Website<input
-        type="text"
-        name="website"
-        class="form-control"
-        ngModel
-      />
-    </div>
-    <div ngModelGroup="address">
+  <div class="col-md-5">
+    <h1>New User Form</h1>
+    <form #userForm="ngForm" (ngSubmit)="submit(userForm)">
       <div class="form-group">
-        <label for="street">Street</label>
-        <input type="text" name="street" class="form-control" ngModel />
+        <label for="name"></label>Name<input
+          #name="ngModel"
+          pattern="John Doe"
+          required
+          minlength="8"
+          maxlength="20"
+          type="text"
+          name="name"
+          class="form-control"
+          ngModel
+        />
+      </div>
+      <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+        <p *ngIf="name.errors.required">Name is required</p>
+        <p *ngIf="name.errors.minlength">
+          Name must be at least 8 characters long
+        </p>
+        <p *ngIf="name.errors.maxlength">Name can be at max 20 characters long</p>
+        <p *ngIf="name.errors.pattern">Name must only be John Doe</p>
       </div>
       <div class="form-group">
-        <label for="suite">Suite</label
-        ><input type="text" name="suite" class="form-control" ngModel />
+        <label for="username"></label>Username<input
+          type="text"
+          name="username"
+          class="form-control"
+          ngModel
+        />
       </div>
       <div class="form-group">
-        <label for="city">City</label
-        ><input type="text" name="city" class="form-control" ngModel />
+        <label for="email"></label>Email<input
+          type="text"
+          name="email"
+          class="form-control"
+          ngModel
+        />
       </div>
       <div class="form-group">
-        <label for="zipcode">Zipcode</label
-        ><input type="text" name="zipcode" class="form-control" ngModel />
+        <label for="phone"></label>Phone<input
+          type="text"
+          name="phone"
+          class="form-control"
+          ngModel
+        />
       </div>
-      <div ngModelGroup="geo">
+      <div class="form-group">
+        <label for="website"></label>Website<input
+          type="text"
+          name="website"
+          class="form-control"
+          ngModel
+        />
+      </div>
+      <div ngModelGroup="address">
         <div class="form-group">
-          <label for="lat">Lat</label
-          ><input type="text" name="lat" class="form-control" ngModel />
+          <label for="street">Street</label>
+          <input type="text" name="street" class="form-control" ngModel />
         </div>
         <div class="form-group">
-          <label for="lng">Lng</label
-          ><input type="text" name="lng" class="form-control" ngModel />
+          <label for="suite">Suite</label
+          ><input type="text" name="suite" class="form-control" ngModel />
+        </div>
+        <div class="form-group">
+          <label for="city">City</label
+          ><input type="text" name="city" class="form-control" ngModel />
+        </div>
+        <div class="form-group">
+          <label for="zipcode">Zipcode</label
+          ><input type="text" name="zipcode" class="form-control" ngModel />
+        </div>
+        <div ngModelGroup="geo">
+          <div class="form-group">
+            <label for="lat">Lat</label
+            ><input type="text" name="lat" class="form-control" ngModel />
+          </div>
+          <div class="form-group">
+            <label for="lng">Lng</label
+            ><input type="text" name="lng" class="form-control" ngModel />
+          </div>
         </div>
       </div>
-    </div>
-    <div ngModelGroup="company">
-      <div class="form-group">
-        <label for="name">Name</label
-        ><input type="text" name="name" class="form-control" ngModel />
+      <div ngModelGroup="company">
+        <div class="form-group">
+          <label for="name">Name</label
+          ><input type="text" name="name" class="form-control" ngModel />
+        </div>
+        <div class="form-group">
+          <label for="catchPhrase">Catch Phrase</label
+          ><input type="text" name="catchPhrase" class="form-control" ngModel />
+        </div>
+        <div class="form-group">
+          <label for="bs">BS</label
+          ><input type="text" name="bs" class="form-control" ngModel />
+        </div>
+      </div>
+      <div class="radio">
+        <label class="form-control" for="gender" *ngFor="let gender of genders">
+          <input name="gender" [value]="gender" ngModel type="radio" />
+          {{ gender }} <br />
+        </label>
       </div>
       <div class="form-group">
-        <label for="catchPhrase">Catch Phrase</label
-        ><input type="text" name="catchPhrase" class="form-control" ngModel />
+        <label for="communicationMode">Communication Options</label>
+        <select name="communicationMode" class="form-control" ngModel>
+          <option value=""></option>
+          <option *ngFor="let comOpt of communicationModes" [value]="comOpt">{{
+            comOpt
+          }}</option>
+        </select>
       </div>
-      <div class="form-group">
-        <label for="bs">BS</label
-        ><input type="text" name="bs" class="form-control" ngModel />
+      <div class="checkbox">
+        <label for="agreement">
+          <input name="agreement" ngModel type="checkbox" /> I agree to the Terms
+          and Conditions! <br />
+        </label>
       </div>
-    </div>
-    <div class="radio">
-      <label class="form-control" for="gender" *ngFor="let gender of genders">
-        <input name="gender" [value]="gender" ngModel type="radio" />
-        {{ gender }} <br />
-      </label>
-    </div>
-    <div class="form-group">
-      <label for="communicationMode">Communication Options</label>
-      <select name="communicationMode" class="form-control" ngModel>
-        <option value=""></option>
-        <option *ngFor="let comOpt of communicationModes" [value]="comOpt">{{
-          comOpt
-        }}</option>
-      </select>
-    </div>
-    <div class="checkbox">
-      <label for="agreement">
-        <input name="agreement" ngModel type="checkbox" /> I agree to the Terms
-        and Conditions! <br />
-      </label>
-    </div>
-    <hr />
+      <hr />
+      <pre>
+        {{ userForm.value | json }}
+      </pre>
+      <hr />
+      <button class="btn btn-primary" type="submit" [disabled]="userForm.invalid">
+        Submit
+      </button>
+    </form>
+  </div>
+  <div class="col-md-7">
     <pre>
-      {{ userForm.value | json }}
+      {{ userList | json}}
     </pre>
-    <hr />
-    <button class="btn btn-primary" type="submit" [disabled]="userForm.invalid">
-      Submit
-    </button>
-  </form>
+    <button class="btn btn-primary" type="button" (click)="getUsers()">Get Users</button>
+  </div>
 </div>
